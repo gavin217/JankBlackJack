@@ -4,7 +4,7 @@ public class Card {
     public int value;
     public String name;
     public String suit;
-    public Card(String pSuit, int pValue, int pName){
+    public Card(int pSuit, int pValue, int pName){
         value=pValue;
         if(pName==0){
 
@@ -58,7 +58,18 @@ public class Card {
             name="ace";
             value=1;
         }
-    suit=pSuit;
+        if(pSuit==0){
+            suit="heart";
+        }
+        else if(pSuit==1){
+            suit="diamonds";
+        }
+        else if(pSuit==2){
+            suit="clubs";
+        }
+        else if(pSuit==3){
+            suit="spades";
+        }
 
 
     }

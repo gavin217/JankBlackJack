@@ -4,5 +4,13 @@ public class Player {
     public Card[] hand;
     public boolean isHit;
     public String name;
-    public Player(){}
+
+
+
+    public Player(){
+        CardTotal=0;
+        isBust=false;
+        hand=new Card[2];
+        isHit=false;
+    }
 }

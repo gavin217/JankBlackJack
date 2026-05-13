@@ -10,28 +10,32 @@ BasicGameApp a= new BasicGameApp();
     public BasicGameApp(){
         System.out.println("welcome to blackjack");
         deck=new Card[52];
+        int cardIndex=0;
+        for(int x=0;x<4;x++) {
+
+
+            for (int i=0; i < 13; i++) {
+                deck[cardIndex] = new Card(x, 10, i);
+                cardIndex++;
+
+            }
+        }
+        shuffleCards();
         printDeck();
 
 
     }
+    public void shuffleCards(){
+        for(int a=0;a<deck.length;a++){
+            int randy= (int)(Math.random()*52);
+            Card helper=deck[randy];
+            deck[randy]=deck[a];
+            deck[a]=helper;
+        }
+    }
     public void printDeck(){
-        for (int x=0;x<13;x++){
-            deck[x]=new Card("hearts",10,x);
-            deck[x].printInfo();
+        for (int x=0;x<deck.length;x++){
 
-        }
-        for (int x=0;x<13;x++){
-            deck[x]=new Card("diamonds",10,x);
-            deck[x].printInfo();
-
-        }
-        for (int x=0;x<13;x++){
-            deck[x]=new Card("clubs",10,x);
-            deck[x].printInfo();
-
-        }
-        for (int x=0;x<13;x++){
-            deck[x]=new Card("spades",10,x);
             deck[x].printInfo();
 
         }
