@@ -13,4 +13,12 @@ public class Player {
         hand=new Card[2];
         isHit=false;
     }
+    public void printInfo(){
+        System.out.println(CardTotal);
+        System.out.println(isBust);
+        System.out.println(isHit);
+        for(int x=0;x>2;x++){
+            System.out.println(hand[x]);
+        }
+    }
 }
