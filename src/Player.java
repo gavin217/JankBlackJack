@@ -12,13 +12,22 @@ public class Player {
         isBust=false;
         hand=new Card[2];
         isHit=false;
+        name="me";
     }
     public void printInfo(){
+        System.out.println(name);
         System.out.println(CardTotal);
         System.out.println(isBust);
         System.out.println(isHit);
-        for(int x=0;x>2;x++){
-            System.out.println(hand[x]);
+        for(int x=0;x< hand.length;x++){
+            hand[x].printInfo();
         }
+    }
+    public void calculateTotal(){
+        int addValue=0;
+        for(int x=0;x< hand.length;x++){
+            addValue=addValue+hand[x].value;
+        }
+       CardTotal=addValue;
     }
 }
