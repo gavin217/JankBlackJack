@@ -19,4 +19,11 @@ hand=new Card[2];
             hand[x].printInfo();
         }
     }
+    public void calculateTotal(){
+        int addValue=0;
+        for(int x=0;x< hand.length;x++){
+            addValue=addValue+hand[x].value;
+        }
+        cardTotal=addValue;
+    }
 }

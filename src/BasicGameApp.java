@@ -13,6 +13,7 @@ BasicGameApp a= new BasicGameApp();
     public BasicGameApp(){
         System.out.println("welcome to blackjack");
         p1= new Player();
+        d1=new Dealer();
         deck=new Card[52];
         int cardIndex=0;
         for(int x=0;x<4;x++) {
@@ -29,6 +30,8 @@ BasicGameApp a= new BasicGameApp();
 
         p1.hand[0]=deck[0];//give the player cards
         p1.hand[1]=deck[1];
+        d1.hand[0]=deck[2];
+        d1.hand[1]=deck[3];
 
         Scanner s = new Scanner(System.in);
         System.out.println("what is your name");
@@ -37,6 +40,8 @@ BasicGameApp a= new BasicGameApp();
         p1.name=aName;
         p1.calculateTotal();
         p1.printInfo();
+        d1.calculateTotal();
+        d1.printInfo();
 
 
     }
