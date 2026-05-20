@@ -32,6 +32,14 @@ BasicGameApp a= new BasicGameApp();
         p1.hand[1]=deck[1];
         d1.hand[0]=deck[2];
         d1.hand[1]=deck[3];
+        if (d1.isOver16==false){
+            d1.dealtHand[0]=deck[4];
+            d1.dealtHand[1]=deck[5];
+        }
+
+
+
+
 
         Scanner s = new Scanner(System.in);
         System.out.println("what is your name");
@@ -42,6 +50,11 @@ BasicGameApp a= new BasicGameApp();
         p1.printInfo();
         d1.calculateTotal();
         d1.printInfo();
+
+
+
+
+
 
 
     }
