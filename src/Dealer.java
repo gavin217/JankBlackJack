@@ -35,6 +35,7 @@ dealtHand=new Card[2];
                 isOver16=false;
             } else if (cardTotal>17) {
                 isOver16=true;
+
             }
             if(isOver16==false){
                 addValue=addValue+dealtHand[x].value;
