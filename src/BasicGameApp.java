@@ -32,10 +32,8 @@ BasicGameApp a= new BasicGameApp();
         p1.hand[1]=deck[1];
         d1.hand[0]=deck[2];
         d1.hand[1]=deck[3];
-        if (d1.isOver16==false){
-            d1.dealtHand[0]=deck[4];
-            d1.dealtHand[1]=deck[5];
-        }
+
+
 
 
 
@@ -48,8 +46,23 @@ BasicGameApp a= new BasicGameApp();
         p1.name=aName;
         p1.calculateTotal();
         p1.printInfo();
-        d1.calculateTotal();
-        d1.printInfo();
+        System.out.println("hit or stay");
+        String aDecision=s.nextLine();
+        System.out.println(aDecision);
+        if(aDecision.equals("hit")){
+            int x=1;
+            x=x+1;
+            int y=3;
+            y=y+1;
+            p1.hand[x]= deck[y];
+            p1.calculateTotal();
+            p1.printInfo();
+        }
+        else if(aDecision.equals("stand")){
+            d1.calculateTotal();
+            d1.printInfo();
+        }
+
 
 
 

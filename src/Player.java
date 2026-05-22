@@ -10,7 +10,7 @@ public class Player {
     public Player(){
         CardTotal=0;
         isBust=false;
-        hand=new Card[2];
+        hand=new Card[6];
         isHit=false;
         name="me";
     }
