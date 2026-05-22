@@ -10,7 +10,7 @@ public class Player {
     public Player(){
         CardTotal=0;
         isBust=false;
-        hand=new Card[6];
+        hand=new Card[2];
         isHit=false;
         name="me";
     }
@@ -19,7 +19,7 @@ public class Player {
         System.out.println(CardTotal);
         System.out.println(isBust);
         System.out.println(isHit);
-        for(int x=0;x< hand.length;x++){
+        for(int x=0;x< 3;x++){
             hand[x].printInfo();
         }
     }

@@ -44,8 +44,9 @@ BasicGameApp a= new BasicGameApp();
         String aName = s.nextLine();
         System.out.println(aName);
         p1.name=aName;
-        p1.calculateTotal();
         p1.printInfo();
+        p1.calculateTotal();
+
         System.out.println("hit or stay");
         String aDecision=s.nextLine();
         System.out.println(aDecision);
@@ -54,6 +55,11 @@ BasicGameApp a= new BasicGameApp();
             x=x+1;
             int y=3;
             y=y+1;
+            Card[] helper = p1.hand;
+
+            p1.hand=new Card[3];
+
+
             p1.hand[x]= deck[y];
             p1.calculateTotal();
             p1.printInfo();
