@@ -9,7 +9,7 @@ public class Dealer {
 isOver16=false;
 cardTotal=0;
 isBust=false;
-hand=new Card[6];
+hand=new Card[2];
 
 
     }
@@ -37,6 +37,7 @@ hand=new Card[6];
 
     }
     public void printInfo(){
+        System.out.println("dealer's turn");
         System.out.println(cardTotal);
         System.out.println(isBust);
         System.out.println(isOver16);
