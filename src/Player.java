@@ -40,6 +40,9 @@ public class Player {
         if(CardTotal>21){
             isBust=true;
         }
+        if(CardTotal<=21){
+            isBust=false;
+        }
     }
     public void Hit(){
 

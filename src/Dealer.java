@@ -3,11 +3,14 @@ public class Dealer {
     public int cardTotal;
     public boolean isBust;
     public Card[] hand;
+    public Card[] dHelper;
+    public int round;
 
 
     public Dealer(){
 isOver16=false;
 cardTotal=0;
+round=2;
 isBust=false;
 hand=new Card[2];
 
@@ -29,9 +32,7 @@ hand=new Card[2];
             } else if (cardTotal>21) {
                 isBust=true;
             }
-            if (isBust==true){
-                System.out.println("dealer loses");
-            }
+
 
         }
 
@@ -44,7 +45,23 @@ hand=new Card[2];
         for(int x=0;x< hand.length;x++){
             hand[x].printInfo();
         }
+        if (isBust==true){
+            System.out.println("dealer loses");
+        }
 
+    }
+    public void dHit(){
+        round=round+1;
+    dHelper=hand;
+    hand=new Card[round];
+        for(int x=0;x< dHelper.length;x++){
+            hand[x]=dHelper[x];
+        }
+    }
+    public void dStand(){
+        if(isBust==true){
+            System.out.println("you win");
+        }
     }
 
 }

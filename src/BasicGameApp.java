@@ -144,13 +144,14 @@ public void setUpGraphics(){
 
     @Override
     public void keyPressed(KeyEvent e) {
-        System.out.println(e.getKeyCode());//h is 72 s is 83
+        //h is 72 s is 83
         if(e.getKeyCode()==72){
             p1.isHit=true;
           p1.Hit();
             p1.hand[p1.round-1]=deck[p1.round+1];//change this so its an overall coutn of cards
             p1.calculateTotal();
             p1.printInfo();
+            cardAmount=p1.round+d1.hand.length;
             if(p1.isBust==true){
                 p1.isStand=true;
                 p1.stand();
@@ -159,10 +160,32 @@ public void setUpGraphics(){
         }
         if(e.getKeyCode()==83){
             p1.isStand=true;
+            p1.calculateTotal();
+            p1.printInfo();
             p1.stand();
+            cardAmount=p1.round+d1.hand.length;
             if(p1.dTurn==true){
                 d1.calculateTotal();
                 d1.printInfo();
+                System.out.println(cardAmount);
+                while(d1.isOver16==false){
+                    d1.dHit();
+                    d1.hand[d1.round-1]=deck[cardAmount+1];
+                    d1.calculateTotal();
+                    d1.printInfo();
+                }
+                if(d1.isOver16==true){
+                    d1.dStand();
+                    if(p1.CardTotal> d1.cardTotal){
+                        System.out.println("you win");
+                    }
+                    if(p1.CardTotal<d1.cardTotal&&d1.isBust==false){
+                        System.out.println("you lose");
+                    }
+                    if(p1.CardTotal== d1.cardTotal){
+                        System.out.println("tie");
+                    }
+                }
             }
         }
 
