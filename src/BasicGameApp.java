@@ -11,7 +11,7 @@ import javax.swing.JPanel;
 
 public class BasicGameApp implements Runnable, KeyListener {
     public Card[] deck;
-    public int cardAmount;//should equal p1 round plus dealer cards
+    public int cardAmount;//should equal p1 round plus dealer cards so ican indepednetly calculat stuff
     public boolean gameOn;
     public Player p1;
     public Dealer d1;
