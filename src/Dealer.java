@@ -40,8 +40,6 @@ hand=new Card[2];
     public void printInfo(){
         System.out.println("dealer's turn");
         System.out.println(cardTotal);
-        System.out.println(isBust);
-        System.out.println(isOver16);
         for(int x=0;x< hand.length;x++){
             hand[x].printInfo();
         }

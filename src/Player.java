@@ -25,8 +25,6 @@ public class Player {
     public void printInfo(){
         System.out.println(name);
         System.out.println(CardTotal);
-        System.out.println(isBust);
-        System.out.println(isHit);
         for(int x=0;x< hand.length;x++){
             hand[x].printInfo();
         }

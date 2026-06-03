@@ -11,7 +11,7 @@ import javax.swing.JPanel;
 
 public class BasicGameApp implements Runnable, KeyListener {
     public Card[] deck;
-    public int cardAmount;//should equal p1 round plus dealer cards so ican indepednetly calculat stuff
+    public int cardAmount;
     public boolean gameOn;
     public Player p1;
     public Dealer d1;
@@ -42,6 +42,7 @@ BasicGameApp a= new BasicGameApp();
 
             }
         }
+
         shuffleCards();
         printDeck();
 
@@ -62,7 +63,15 @@ BasicGameApp a= new BasicGameApp();
         Scanner s = new Scanner(System.in);
         p1.calculateTotal();
         p1.printInfo();
-        System.out.println("hit or stay");
+        System.out.println("hit or stand");
+        String aOption = s.nextLine();
+        System.out.println(aOption);
+        if(aOption.equals("hit")){
+            System.out.println("click white box and hit h");
+        }
+        if(aOption.equals("stand")){
+            System.out.println("click white box and hit s");
+        }
 
 
 
@@ -88,6 +97,14 @@ BasicGameApp a= new BasicGameApp();
             // sleep for 10 ms
         }
 
+    }
+    public void pause(int time ){
+        //sleep
+        try {
+            Thread.sleep(time);
+        } catch (InterruptedException e) {
+
+        }
     }
     public void shuffleCards(){
         for(int a=0;a<deck.length;a++){
@@ -148,7 +165,7 @@ public void setUpGraphics(){
         if(e.getKeyCode()==72){
             p1.isHit=true;
           p1.Hit();
-            p1.hand[p1.round-1]=deck[p1.round+1];//change this so its an overall coutn of cards
+            p1.hand[p1.round-1]=deck[p1.round+1];
             p1.calculateTotal();
             p1.printInfo();
             cardAmount=p1.round+d1.hand.length;
@@ -173,6 +190,7 @@ public void setUpGraphics(){
                     d1.hand[d1.round-1]=deck[cardAmount+1];
                     d1.calculateTotal();
                     d1.printInfo();
+                    pause(1000);
                 }
                 if(d1.isOver16==true){
                     d1.dStand();
